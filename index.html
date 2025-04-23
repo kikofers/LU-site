@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Design Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div id="darkModeToggle" class="text-xl font-bold cursor-pointer select-none">DesignSite</div>
+      <ul class="flex flex-wrap gap-3">
+        <li><a href="#section1" class="nav-link">Section 1</a></li>
+        <li><a href="#section2" class="nav-link">Section 2</a></li>
+        <li><a href="#section3" class="nav-link">Section 3</a></li>
+        <li><a href="#section4" class="nav-link">Section 4</a></li>
+        <li><a href="#section5" class="nav-link">Section 5</a></li>
+        <li><a href="#section6" class="nav-link">Section 6</a></li>
+        <li><a href="#section7" class="nav-link">Section 7</a></li>
+        <li><a href="#section8" class="nav-link">Section 8</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+    <h1 class="text-5xl font-bold mb-4">Welcome to the Visual Experience</h1>
+    <p class="text-lg max-w-xl mb-6">Explore the design-focused interface by clicking through the sections above.</p>
+    <img src="https://via.placeholder.com/800x400" alt="Hero" class="rounded-lg shadow-lg">
+  </section>
+
+  <!-- Content Sections -->
+  <main class="space-y-32">
+    <!-- Sections Template -->
+    <section id="section1" class="min-h-screen flex flex-col items-center text-center px-4">
+      <h2 class="text-4xl font-semibold mb-4">Section 1</h2>
+      <p class="max-w-2xl mb-6">Content for section 1 goes here.</p>
+      <img src="https://via.placeholder.com/600x300" alt="Section 1 Image" class="rounded-lg shadow-md">
+    </section>
+
+    <section id="section2" class="min-h-screen flex flex-col items-center text-center px-4">
+      <h2 class="text-4xl font-semibold mb-4">Section 2</h2>
+      <p class="max-w-2xl mb-6">Content for section 2 goes here.</p>
+      <img src="https://via.placeholder.com/600x300" alt="Section 2 Image" class="rounded-lg shadow-md">
+    </section>
+
+    <section id="section3" class="min-h-screen flex flex-col items-center text-center px-4">
+      <h2 class="text-4xl font-semibold mb-4">Section 3</h2>
+      <p class="max-w-2xl mb-6">Content for section 3 goes here.</p>
+      <img src="https://via.placeholder.com/600x300" alt="Section 3 Image" class="rounded-lg shadow-md">
+    </section>
+
+    <section id="section4" class="min-h-screen flex flex-col items-center text-center px-4">
+      <h2 class="text-4xl font-semibold mb-4">Section 4</h2>
+      <p class="max-w-2xl mb-6">Content for section 4 goes here.</p>
+      <img src="https://via.placeholder.com/600x300" alt="Section 4 Image" class="rounded-lg shadow-md">
+    </section>
+
+    <section id="section5" class="min-h-screen flex flex-col items-center text-center px-4">
+      <h2 class="text-4xl font-semibold mb-4">Section 5</h2>
+      <p class="max-w-2xl mb-6">Content for section 5 goes here.</p>
+      <img src="https://via.placeholder.com/600x300" alt="Section 5 Image" class="rounded-lg shadow-md">
+    </section>
+
+    <section id="section6" class="min-h-screen flex flex-col items-center text-center px-4">
+      <h2 class="text-4xl font-semibold mb-4">Section 6</h2>
+      <p class="max-w-2xl mb-6">Content for section 6 goes here.</p>
+      <img src="https://via.placeholder.com/600x300" alt="Section 6 Image" class="rounded-lg shadow-md">
+    </section>
+
+    <section id="section7" class="min-h-screen flex flex-col items-center text-center px-4">
+      <h2 class="text-4xl font-semibold mb-4">Section 7</h2>
+      <p class="max-w-2xl mb-6">Content for section 7 goes here.</p>
+      <img src="https://via.placeholder.com/600x300" alt="Section 7 Image" class="rounded-lg shadow-md">
+    </section>
+
+    <section id="section8" class="min-h-screen flex flex-col items-center text-center px-4">
+      <h2 class="text-4xl font-semibold mb-4">Section 8</h2>
+      <p class="max-w-2xl mb-6">Content for section 8 goes here.</p>
+      <img src="https://via.placeholder.com/600x300" alt="Section 8 Image" class="rounded-lg shadow-md">
+    </section>
+  </main>
+
+  <script>
+    const toggleButton = document.getElementById('darkModeToggle');
+    toggleButton.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>
