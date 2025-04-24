@@ -1,98 +1,118 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visual Design Website</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
     }
   </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+
+<body class="bg-white dark:bg-neutral-900 text-gray-900 dark:text-white transition-colors duration-300">
   <!-- Navigation Bar -->
-  <nav class="fixed top-0 left-0 w-full z-50 bg-white/70 dark:bg-gray-900/70 backdrop-blur-md shadow-md">
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-neutral-800/90 backdrop-blur-md shadow-md transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <div id="darkModeToggle" class="text-xl font-bold cursor-pointer select-none">DesignSite</div>
+      <a href="#title" class="text-xl font-bold cursor-pointer select-none">Mana LU pieredze:</a>
       <ul class="flex flex-wrap gap-3">
-        <li><a href="#section1" class="nav-link">Section 1</a></li>
-        <li><a href="#section2" class="nav-link">Section 2</a></li>
-        <li><a href="#section3" class="nav-link">Section 3</a></li>
-        <li><a href="#section4" class="nav-link">Section 4</a></li>
-        <li><a href="#section5" class="nav-link">Section 5</a></li>
-        <li><a href="#section6" class="nav-link">Section 6</a></li>
-        <li><a href="#section7" class="nav-link">Section 7</a></li>
-        <li><a href="#section8" class="nav-link">Section 8</a></li>
+        <li><a href="#section1" class="nav-link">1. semestris</a></li>
+        <li><a href="#section2" class="nav-link">2. semestris</a></li>
+        <li><a href="#section3" class="nav-link">3. semestris</a></li>
+        <li><a href="#section4" class="nav-link">4. semestris</a></li>
+        <li><a href="#section5" class="nav-link">5. semestris</a></li>
+        <li><a href="#section6" class="nav-link">6. semestris</a></li>
+        <li><a href="#section7" class="nav-link">7. semestris</a></li>
+        <li><a href="#section8" class="nav-link">8. semestris</a></li>
+        <li>
+          <div class="flex items-center">
+            <button id="darkModeToggle" class="w-8 h-8">
+              <img src="photos/to_dark.png" alt="Toggle Light Mode" class="w-full h-full object-contain">
+            </button>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
-    <h1 class="text-5xl font-bold mb-4">Welcome to the Visual Experience</h1>
-    <p class="text-lg max-w-xl mb-6">Explore the design-focused interface by clicking through the sections above.</p>
-    <img src="https://via.placeholder.com/800x400" alt="Hero" class="rounded-lg shadow-lg">
+  <!-- Title Section -->
+  <section id="title" class="h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+    <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white transition-colors duration-300">Mana digitālā pieredze Latvijas Universitātē caur semestriem</h1>
+    <p class="text-lg max-w-xl mb-6 text-gray-800 dark:text-neutral-300 transition-colors duration-300">Parastais teksts ies šeit...</p>
+    <img src="https://via.placeholder.com/800x400" alt="Title image" class="rounded-lg shadow-lg">
   </section>
 
   <!-- Content Sections -->
   <main class="space-y-32">
-    <!-- Sections Template -->
-    <section id="section1" class="min-h-screen flex flex-col items-center text-center px-4">
-      <h2 class="text-4xl font-semibold mb-4">Section 1</h2>
-      <p class="max-w-2xl mb-6">Content for section 1 goes here.</p>
-      <img src="https://via.placeholder.com/600x300" alt="Section 1 Image" class="rounded-lg shadow-md">
+    <section id="section1" class="min-h-screen flex flex-row items-center px-4 bg-gray-50 dark:bg-neutral-800 transition-colors duration-300">
+      <img src="https://via.placeholder.com/600x300" alt="1. semestra bilde" class="rounded-lg shadow-md w-1/2">
+      <div class="text-left w-1/2 px-6">
+        <h2 class="text-4xl font-semibold mb-4 text-gray-900 dark:text-white transition-colors duration-300">1. semestris</h2>
+        <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">Saturs priekš pirmā semestra būs šeit.</p>
+      </div>
     </section>
-
-    <section id="section2" class="min-h-screen flex flex-col items-center text-center px-4">
-      <h2 class="text-4xl font-semibold mb-4">Section 2</h2>
-      <p class="max-w-2xl mb-6">Content for section 2 goes here.</p>
-      <img src="https://via.placeholder.com/600x300" alt="Section 2 Image" class="rounded-lg shadow-md">
+    
+    <section id="section2" class="min-h-screen flex flex-row-reverse items-center px-4 bg-gray-50 dark:bg-neutral-800 transition-colors duration-300">
+      <img src="https://via.placeholder.com/600x300" alt="2. semestra bilde" class="rounded-lg shadow-md w-1/2">
+      <div class="text-right w-1/2 px-6">
+      <h2 class="text-4xl text-left font-semibold mb-4 text-gray-900 dark:text-white transition-colors duration-300">2. semestris</h2>
+      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">Saturs priekš otrā semestra būs šeit.</p>
+      </div>
     </section>
-
-    <section id="section3" class="min-h-screen flex flex-col items-center text-center px-4">
-      <h2 class="text-4xl font-semibold mb-4">Section 3</h2>
-      <p class="max-w-2xl mb-6">Content for section 3 goes here.</p>
-      <img src="https://via.placeholder.com/600x300" alt="Section 3 Image" class="rounded-lg shadow-md">
+    
+    <section id="section3" class="min-h-screen flex flex-row items-center px-4 bg-gray-50 dark:bg-neutral-800 transition-colors duration-300">
+      <img src="https://via.placeholder.com/600x300" alt="3. semestra bilde" class="rounded-lg shadow-md w-1/2">
+      <div class="text-left w-1/2 px-6">
+      <h2 class="text-4xl font-semibold mb-4 text-gray-900 dark:text-white transition-colors duration-300">3. semestris</h2>
+      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">Saturs priekš trešā semestra būs šeit.</p>
+      </div>
     </section>
-
-    <section id="section4" class="min-h-screen flex flex-col items-center text-center px-4">
-      <h2 class="text-4xl font-semibold mb-4">Section 4</h2>
-      <p class="max-w-2xl mb-6">Content for section 4 goes here.</p>
-      <img src="https://via.placeholder.com/600x300" alt="Section 4 Image" class="rounded-lg shadow-md">
+    
+    <section id="section4" class="min-h-screen flex flex-row-reverse items-center px-4 bg-gray-50 dark:bg-neutral-800 transition-colors duration-300">
+      <img src="https://via.placeholder.com/600x300" alt="4. semestra bilde" class="rounded-lg shadow-md w-1/2">
+      <div class="text-right w-1/2 px-6">
+      <h2 class="text-4xl text-left font-semibold mb-4 text-gray-900 dark:text-white transition-colors duration-300">4. semestris</h2>
+      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">Saturs priekš ceturtā semestra būs šeit.</p>
+      </div>
     </section>
-
-    <section id="section5" class="min-h-screen flex flex-col items-center text-center px-4">
-      <h2 class="text-4xl font-semibold mb-4">Section 5</h2>
-      <p class="max-w-2xl mb-6">Content for section 5 goes here.</p>
-      <img src="https://via.placeholder.com/600x300" alt="Section 5 Image" class="rounded-lg shadow-md">
+    
+    <section id="section5" class="min-h-screen flex flex-row items-center px-4 bg-gray-50 dark:bg-neutral-800 transition-colors duration-300">
+      <img src="https://via.placeholder.com/600x300" alt="5. semestra bilde" class="rounded-lg shadow-md w-1/2">
+      <div class="text-left w-1/2 px-6">
+      <h2 class="text-4xl font-semibold mb-4 text-gray-900 dark:text-white transition-colors duration-300">5. semestris</h2>
+      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">Saturs priekš piektā semestra būs šeit.</p>
+      </div>
     </section>
-
-    <section id="section6" class="min-h-screen flex flex-col items-center text-center px-4">
-      <h2 class="text-4xl font-semibold mb-4">Section 6</h2>
-      <p class="max-w-2xl mb-6">Content for section 6 goes here.</p>
-      <img src="https://via.placeholder.com/600x300" alt="Section 6 Image" class="rounded-lg shadow-md">
+    
+    <section id="section6" class="min-h-screen flex flex-row-reverse items-center px-4 bg-gray-50 dark:bg-neutral-800 transition-colors duration-300">
+      <img src="https://via.placeholder.com/600x300" alt="6. semestra bilde" class="rounded-lg shadow-md w-1/2">
+      <div class="text-right w-1/2 px-6">
+      <h2 class="text-4xl text-left font-semibold mb-4 text-gray-900 dark:text-white transition-colors duration-300">6. semestris</h2>
+      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">Saturs priekš sestā semestra būs šeit.</p>
+      </div>
     </section>
-
-    <section id="section7" class="min-h-screen flex flex-col items-center text-center px-4">
-      <h2 class="text-4xl font-semibold mb-4">Section 7</h2>
-      <p class="max-w-2xl mb-6">Content for section 7 goes here.</p>
-      <img src="https://via.placeholder.com/600x300" alt="Section 7 Image" class="rounded-lg shadow-md">
+    
+    <section id="section7" class="min-h-screen flex flex-row items-center px-4 bg-gray-50 dark:bg-neutral-800 transition-colors duration-300">
+      <img src="https://via.placeholder.com/600x300" alt="7. semestra bilde" class="rounded-lg shadow-md w-1/2">
+      <div class="text-left w-1/2 px-6">
+      <h2 class="text-4xl font-semibold mb-4 text-gray-900 dark:text-white transition-colors duration-300">7. semestris</h2>
+      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">Saturs priekš septītā semestra būs šeit.</p>
+      </div>
     </section>
-
-    <section id="section8" class="min-h-screen flex flex-col items-center text-center px-4">
-      <h2 class="text-4xl font-semibold mb-4">Section 8</h2>
-      <p class="max-w-2xl mb-6">Content for section 8 goes here.</p>
-      <img src="https://via.placeholder.com/600x300" alt="Section 8 Image" class="rounded-lg shadow-md">
+    
+    <section id="section8" class="min-h-screen flex flex-row-reverse items-center px-4 bg-gray-50 dark:bg-neutral-800 transition-colors duration-300">
+      <img src="https://via.placeholder.com/600x300" alt="8. semestra bilde" class="rounded-lg shadow-md w-1/2">
+      <div class="text-right w-1/2 px-6">
+      <h2 class="text-4xl text-left font-semibold mb-4 text-gray-900 dark:text-white transition-colors duration-300">8. semestris</h2>
+      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">Saturs priekš astotā semestra būs šeit.</p>
+      </div>
     </section>
   </main>
 
-  <script>
-    const toggleButton = document.getElementById('darkModeToggle');
-    toggleButton.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-    });
-  </script>
+  <!-- Link to external script -->
+  <script src="script.js"></script>
 </body>
 </html>
