@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const darkModeToggle = document.getElementById('darkModeToggle');
   const body = document.body;
 
-  /*
   // Check for saved theme in localStorage
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     body.classList.toggle('dark', prefersDark);
   }
-  */
 
   // Update the button icon based on the current theme
   const updateButtonIcon = () => {
@@ -27,5 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const isDarkMode = body.classList.toggle('dark');
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     updateButtonIcon();
+  });
+
+  // Toggle the visibility of the navigation links on mobile
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('hidden');
+    navLinks.classList.toggle('flex');
+    navLinks.classList.toggle('flex-col');
+    navLinks.classList.toggle('gap-2');
   });
 });

@@ -30,10 +30,17 @@
 
 <body class="bg-white dark:bg-bg_darker text-gray-900 dark:text-white transition-colors duration-300">
   <!-- Navigation Bar -->
-  <nav class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-bg_dark/90 backdrop-blur-md shadow-md transition-colors duration-300">
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/50 dark:bg-bg_dark/50 backdrop-blur-md shadow-md transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
       <a href="#title" class="text-xl dark:text-white transition-colors duration-300 font-bold cursor-pointer select-none hover:text-GOLD">Mana LU pieredze:</a>
-      <ul class="flex items-center gap-3">
+      <!-- Hamburger Menu Button -->
+      <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center">
+        <svg class="w-6 h-6 text-gray-900 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <!-- Navigation Links -->
+      <ul id="navLinks" class="hidden md:flex items-center gap-3">
         <li><a href="#section1" class="nav-link dark:text-white transition-colors duration-300 hover:text-GOLD">1. semestris</a></li>
         <li><a href="#section2" class="nav-link dark:text-white transition-colors duration-300 hover:text-GOLD">2. semestris</a></li>
         <li><a href="#section3" class="nav-link dark:text-white transition-colors duration-300 hover:text-GOLD">3. semestris</a></li>
@@ -56,7 +63,8 @@
   <!-- Title Section -->
   <section id="title" class="h-screen flex flex-col dark:bg-bg_darker justify-center items-center text-center px-4 pt-20 transition-colors duration-300">
     <h1 class="text-5xl font-bold mb-4 text-gray-900 dark:text-white transition-colors duration-300">Mana digitālā pieredze Latvijas Universitātē caur semestriem</h1>
-    <p class="text-lg max-w-xl mb-6 text-gray-800 dark:text-neutral-300 transition-colors duration-300">Parastais teksts ies šeit...</p>
+    <p class="text-lg max-w-xl mb-6 text-gray-800 dark:text-neutral-300 transition-colors duration-300">Filler teksts, jeb saturs...</p>
+    </p>
     <img src="https://via.placeholder.com/800x400" alt="Title image" class="rounded-lg shadow-lg dark:text-white transition-colors duration-300">
   </section>
 
