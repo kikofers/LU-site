@@ -1,4 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Intersection Observer for section animation using Tailwind classes only
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('opacity-0', '-translate-x-full');
+        void entry.target.offsetWidth;
+        entry.target.classList.add('opacity-100', 'translate-x-0');
+        observer.unobserve(entry.target); // Animate only once
+      }
+    });
+  }, { threshold: 0 });
+
+  // Force a scroll event to trigger observer for already visible sections
+  setTimeout(() => { window.scrollBy(0, 1); window.scrollBy(0, -1); }, 100);
+
+  // Target all main content sections
+  const sections = document.querySelectorAll('main > section');
+  console.log('Found sections:', sections.length);
+  sections.forEach(el => {
+    el.style.transitionDelay = '';
+    observer.observe(el);
+  });
+
   const darkModeToggle = document.getElementById('darkModeToggle');
   const body = document.body;
 
@@ -19,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     img.src = isDarkMode ? 'photos/to_light.png' : 'photos/to_dark.png';
   };
   updateButtonIcon();
-
+  
   // Add event listener to toggle dark mode
   darkModeToggle.addEventListener('click', () => {
     const isDarkMode = body.classList.toggle('dark');
@@ -27,14 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
     updateButtonIcon();
   });
 
+  // TODO: fix this for mobile view.
   // Toggle the visibility of the navigation links on mobile
   const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
+  const mobileMenu = document.getElementById('mobileMenu');
 
   menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('hidden');
-    navLinks.classList.toggle('flex');
-    navLinks.classList.toggle('flex-col');
-    navLinks.classList.toggle('gap-2');
+    mobileMenu.classList.toggle('hidden');
   });
 });
