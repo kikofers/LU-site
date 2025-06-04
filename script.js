@@ -26,22 +26,6 @@ if (document.readyState === 'loading') {
   updateSectionImagesForDarkMode();
 }
 document.addEventListener('DOMContentLoaded', () => {
-  const imageList = [
-    'photos/LU1.jpg',
-    'photos/LU2.jpg',
-    'photos/hall.jpg',
-    'photos/lapenis.jpg',
-    'photos/flowers.jpg',
-    'photos/glass.jpg',
-    'photos/me.jpg',
-    'photos/tv.jpg',
-    'photos/graduates.jpg'
-  ];
-  imageList.forEach(src => {
-    const img = new Image();
-    img.src = src;
-  });
-  
   // Intersection Observer for section animation using Tailwind classes only
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -103,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // TODO: fix this for mobile view.
   // Toggle the visibility of the navigation links on mobile
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -116,6 +99,20 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
       mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+    }
+  });
+
+  // Preload both light and dark images for all section images to avoid reloads on theme switch
+  document.querySelectorAll('.section-img, #title img[alt="Title image"]').forEach(img => {
+    const lightSrc = img.getAttribute('data-light');
+    const darkSrc = img.getAttribute('data-dark');
+    if (lightSrc) {
+      const preloadLight = new Image();
+      preloadLight.src = lightSrc;
+    }
+    if (darkSrc) {
+      const preloadDark = new Image();
+      preloadDark.src = darkSrc;
     }
   });
 });
