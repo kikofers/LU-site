@@ -33,7 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.classList.remove('opacity-0');
         void entry.target.offsetWidth;
         entry.target.classList.add('opacity-100');
-        observer.unobserve(entry.target); // Animate only once
+      } else {
+        entry.target.classList.remove('opacity-100');
+        entry.target.classList.add('opacity-0');
       }
     });
   }, { threshold: 0 });
