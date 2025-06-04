@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preload" as="image" href="photos/LU2.jpg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visual Design Website</title>
@@ -30,11 +31,11 @@
 
 
 
-<body class="bg-white dark:bg-bg_dark text-gray-900 dark:text-white transition-colors duration-300">
+<body class="bg-white dark:bg-bg_dark text-gray-900 dark:text-white transition-colors duration-500">
   <!-- Navigation Bar -->
-  <nav class="fixed top-0 left-0 w-full z-50 bg-white/50 dark:bg-bg_dark/80 backdrop-blur-md shadow-md transition-colors duration-300">
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white/50 dark:bg-bg_dark/80 backdrop-blur-md shadow-md transition-colors duration-500">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <a href="#title" class="text-xl dark:text-white transition-colors duration-300 font-bold cursor-pointer select-none hover:text-LU_BLUE">Mans LU ceļš:</a>
+      <a href="#title" class="text-xl dark:text-white transition-colors duration-500 font-bold cursor-pointer select-none hover:text-LU_BLUE dark:hover:text-GOLD">Mans LU ceļš:</a>
       <!-- Hamburger Menu Button -->
       <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center">
         <svg class="w-6 h-6 text-gray-900 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -44,18 +45,18 @@
 
       <!-- Desktop Nav -->
       <ul class="hidden md:flex items-center gap-3">
-        <li><a href="#section1" class="nav-link flex justify-center dark:text-white transition-colors duration-300 hover:text-LU_BLUE text-center w-full">1. semestris</a></li>
-        <li><a href="#section2" class="nav-link flex justify-center dark:text-white transition-colors duration-300 hover:text-LU_BLUE text-center w-full">2. semestris</a></li>
-        <li><a href="#section3" class="nav-link flex justify-center dark:text-white transition-colors duration-300 hover:text-LU_BLUE text-center w-full">3. semestris</a></li>
-        <li><a href="#section4" class="nav-link flex justify-center dark:text-white transition-colors duration-300 hover:text-LU_BLUE text-center w-full">4. semestris</a></li>
-        <li><a href="#section5" class="nav-link flex justify-center dark:text-white transition-colors duration-300 hover:text-LU_BLUE text-center w-full">5. semestris</a></li>
-        <li><a href="#section6" class="nav-link flex justify-center dark:text-white transition-colors duration-300 hover:text-LU_BLUE text-center w-full">6. semestris</a></li>
-        <li><a href="#section7" class="nav-link flex justify-center dark:text-white transition-colors duration-300 hover:text-LU_BLUE text-center w-full">7. semestris</a></li>
-        <li><a href="#section8" class="nav-link flex justify-center dark:text-white transition-colors duration-300 hover:text-LU_BLUE text-center w-full">8. semestris</a></li>
+        <li><a href="#section1" class="nav-link flex justify-center dark:text-white transition-colors duration-500 hover:text-LU_BLUE dark:hover:text-GOLD text-center w-full">1. semestris</a></li>
+        <li><a href="#section2" class="nav-link flex justify-center dark:text-white transition-colors duration-500 hover:text-LU_BLUE dark:hover:text-GOLD text-center w-full">2. semestris</a></li>
+        <li><a href="#section3" class="nav-link flex justify-center dark:text-white transition-colors duration-500 hover:text-LU_BLUE dark:hover:text-GOLD text-center w-full">3. semestris</a></li>
+        <li><a href="#section4" class="nav-link flex justify-center dark:text-white transition-colors duration-500 hover:text-LU_BLUE dark:hover:text-GOLD text-center w-full">4. semestris</a></li>
+        <li><a href="#section5" class="nav-link flex justify-center dark:text-white transition-colors duration-500 hover:text-LU_BLUE dark:hover:text-GOLD text-center w-full">5. semestris</a></li>
+        <li><a href="#section6" class="nav-link flex justify-center dark:text-white transition-colors duration-500 hover:text-LU_BLUE dark:hover:text-GOLD text-center w-full">6. semestris</a></li>
+        <li><a href="#section7" class="nav-link flex justify-center dark:text-white transition-colors duration-500 hover:text-LU_BLUE dark:hover:text-GOLD text-center w-full">7. semestris</a></li>
+        <li><a href="#section8" class="nav-link flex justify-center dark:text-white transition-colors duration-500 hover:text-LU_BLUE dark:hover:text-GOLD text-center w-full">8. semestris</a></li>
         <li>
           <div class="flex items-center">
-            <button id="darkModeToggle" class="w-7 h-7 hover:scale-110 transition-transform duration-300">
-              <img src="photos/to_dark.png" alt="Toggle Light Mode" class="w-full h-full object-contain">
+            <button id="darkModeToggleDesktop" class="w-7 h-7 hover:scale-110 transition-transform duration-500">
+              <img loading="eager" src="photos/to_dark.png" alt="Toggle Light Mode" class="w-full h-full object-contain">
             </button>
           </div>
         </li>
@@ -63,158 +64,159 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobileMenu" class="md:hidden hidden flex-col absolute right-4 mt-2 bg-white dark:bg-bg_dark border border-black dark:border-white shadow-lg rounded-lg p-4 z-40 space-y-3 transition-all duration-300">
-      <!-- Dark Mode Toggle -->
-      <button id="darkModeToggle" class="w-7 h-7 hover:scale-110 transition-transform duration-300">
-        <img src="photos/to_dark.png" alt="Toggle Light Mode" class="w-full h-full object-contain">
-      </button>
-      <!-- Mobile Nav Links -->
-      <a href="#section1" class="block dark:text-white hover:text-LU_BLUE">1. semestris</a>
-      <a href="#section2" class="block dark:text-white hover:text-LU_BLUE">2. semestris</a>
-      <a href="#section3" class="block dark:text-white hover:text-LU_BLUE">3. semestris</a>
-      <a href="#section4" class="block dark:text-white hover:text-LU_BLUE">4. semestris</a>
-      <a href="#section5" class="block dark:text-white hover:text-LU_BLUE">5. semestris</a>
-      <a href="#section6" class="block dark:text-white hover:text-LU_BLUE">6. semestris</a>
-      <a href="#section7" class="block dark:text-white hover:text-LU_BLUE">7. semestris</a>
-      <a href="#section8" class="block dark:text-white hover:text-LU_BLUE">8. semestris</a>
+    <div id="mobileMenu" class="md:hidden pointer-events-none opacity-0 flex-col absolute right-4 mt-2 bg-white dark:bg-bg_dark border border-black dark:border-white shadow-lg rounded-lg p-4 z-40 space-y-3 transition-all duration-300">
+      <div class="flex flex-col items-center w-full space-y-2">
+        <!-- Dark Mode Toggle Button on top, vertically centered -->
+        <button id="darkModeToggleMobile" class="w-7 h-7 hover:scale-110 transition-transform duration-500 mb-2">
+          <img src="photos/to_dark.png" alt="Toggle Light Mode" class="w-full h-full object-contain">
+        </button>
+        <div class="flex flex-col flex-1 space-y-3 w-full">
+          <!-- Mobile Nav Links -->
+          <a href="#section1" class="block dark:text-white dark:hover:text-GOLD hover:text-LU_BLUE">1. semestris</a>
+          <a href="#section2" class="block dark:text-white dark:hover:text-GOLD hover:text-LU_BLUE">2. semestris</a>
+          <a href="#section3" class="block dark:text-white dark:hover:text-GOLD hover:text-LU_BLUE">3. semestris</a>
+          <a href="#section4" class="block dark:text-white dark:hover:text-GOLD hover:text-LU_BLUE">4. semestris</a>
+          <a href="#section5" class="block dark:text-white dark:hover:text-GOLD hover:text-LU_BLUE">5. semestris</a>
+          <a href="#section6" class="block dark:text-white dark:hover:text-GOLD hover:text-LU_BLUE">6. semestris</a>
+          <a href="#section7" class="block dark:text-white dark:hover:text-GOLD hover:text-LU_BLUE">7. semestris</a>
+          <a href="#section8" class="block dark:text-white dark:hover:text-GOLD hover:text-LU_BLUE">8. semestris</a>
+        </div>
+      </div>
     </div>
   </nav>
 
   <!-- Title Section -->
-  <section id="title" class="h-screen flex flex-col justify-center items-center text-center relative dark:bg-bg_darker transition-colors duration-300">
-    <div class="absolute inset-0 flex flex-col justify-center items-center z-10 p-40">
-      <h1 class="text-5xl max-w-3xl font-bold mb-4 text-gray-900 dark:text-white transition-colors duration-300 bg-white/50 dark:bg-bg_dark/50 backdrop-blur-sm rounded-lg p-4">
+  <section id="title" class="h-screen flex flex-col justify-center items-center text-center relative dark:bg-bg_darker transition-colors duration-500">
+    <div class="absolute inset-0 flex flex-col justify-center items-center z-10 p-8 md:p-40">
+      <h1 class="text-2xl md:text-5xl max-w-2xl md:max-w-3xl font-bold mb-2 md:mb-4 text-gray-900 dark:text-white transition-colors duration-500 bg-white/50 dark:bg-bg_dark/50 backdrop-blur-sm rounded-lg p-2 md:p-4">
         Mana digitālā pieredze Latvijas Universitātē caur semestriem
       </h1>
-      <p class="text-lg max-w-xl mb-6 text-gray-800 dark:text-neutral-300 transition-colors duration-300 bg-white/50 dark:bg-bg_dark/50 backdrop-blur-sm rounded-lg p-4">
-        Filler teksts, kas apraksta šo mājaslapu un tās mērķi. Šeit varētu būt informācija par to, kā
-        šī lapa palīdz studentiem vai interesentiem uzzināt vairāk par studiju procesu Latvijas Universitātē.
+      <p class="text-sm md:text-lg max-w-xs sm:max-w-md md:max-w-xl mb-4 md:mb-6 text-gray-800 dark:text-neutral-300 transition-colors duration-500 bg-white/50 dark:bg-bg_dark/50 backdrop-blur-sm rounded-lg p-2 md:p-4">
+        Filler teksts, kas apraksta šo mājaslapu un tās mērķi. Šeit varētu būt informācija par to, kā šī lapa palīdz studentiem vai interesentiem uzzināt vairāk par studiju procesu Latvijas Universitātē.
       </p>
     </div>
-    <img src="photos/LU2.jpg" alt="Title image" class="object-cover w-full h-full absolute inset-0 z-0 opacity-80 rounded-none transition-colors duration-300">
+    <img loading="preload" src="photos/light/title.jpg" data-light="photos/light/title.jpg" data-dark="photos/dark/title.jpg" alt="Title image" class="object-cover w-full h-full absolute inset-0 z-0 opacity-80 rounded-none transition-colors duration-500">
   </section>
 
   <!-- Content Sections -->
-  <main class="space-y-32 dark:bg-bg_dark transition-colors duration-300">
-    <section id="section1" class="min-h-screen flex flex-row items-center px-4 bg-gray-50 dark:bg-bg_darker transition-colors duration-300 opacity-0 -translate-x-full transition-all duration-700">
-      <img src="photos/LU1.jpg" alt="1. semestra bilde" class="rounded-lg shadow-md w-1/3 dark:text-white transition-colors duration-300">
-      <div class="text-left w-1/2 px-6">
-        <h2 class="text-4xl font-semibold mb-4 text-LU_BLUE dark:text-GOLD transition-colors duration-300">
-          1. semestris
-        </h2>
-        <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">
-          Pirmais semestris ir sākums visam studiju ceļojumam. Šeit es iepazinos ar Latvijas Universitāti, tās vērtībām un studiju vidi.
-          Semestris likās arī ļoti interesants un aizraujošs, jo daudzas lietas priekš manis bija kaut kas jauns.
-          Lekcijas notika jaunākajās Latvijas Universitātes fakultātēs, savukārt laboratorijas darbi notika mūsu vecākajā fakultātes ēkā.
-          Līdz ar to, ceļs uz universitāti bija divpusējs - šad un tad vajadzēja doties uz Raiņa bulvāri, bet citreiz uz Jelgavas ielu.
-          Atceros, ka sākumā man tas likās nedaudz mulsinoši, bet ar laiku es pieradu pie šīs kārtības un sapratu, ka tāds nu tas ceļs vien ir.
-          Bet neskatoties uz šo ceļu, man ļoti patika fakultāte un studiju atmosfēra.
-          Kā arī dodoties ceļā uz Latvijas Universitāti, man vienmēr pa ceļam bija interesanti lūkoties apkārt un vērot Rīgu.
+  <main class="space-y-32 dark:bg-bg_dark transition-colors duration-500">
+    <section id="section1" class="min-h-screen flex flex-col items-center justify-center px-4 bg-gray-50 dark:bg-bg_darker opacity-0 transition-all duration-500 md:mt-0">
+      <div class="flex flex-col md:flex-row items-center md:items-center justify-center w-full max-w-5xl h-full md:space-x-8">
+        <div class="flex flex-col w-full md:w-2/3 h-full justify-center">
+          <h2 class="text-2xl md:text-4xl font-semibold mt-4 mb-4 text-center md:text-right text-LU_BLUE dark:text-GOLD transition-colors duration-500">1. semestris</h2>
+          <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+            Pirmais semestris ir sākums visam manam lielajam studiju ceļojumam. Šeit es iepazinos ar Latvijas Universitāti, tās vērtībām un studiju vidi. Semestris likās arī ļoti interesants un aizraujošs, jo daudzas lietas priekš manis bija kaut kas jauns.
+          </p>
+          <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+            Lekcijas notika jaunākajās Latvijas Universitātes fakultātēs, savukārt laboratorijas darbi notika mūsu vecākajā fakultātes ēkā. Līdz ar to, ceļs uz universitāti bija divpusējs - šad un tad vajadzēja doties uz Raiņa bulvāri, bet citreiz uz Jelgavas ielu.
+          </p>
+          <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+            Atceros, ka sākumā man tas likās nedaudz mulsinoši, bet ar laiku es pieradu pie šīs kārtības un sapratu, ka tāds nu tas ceļs vien ir. Bet neskatoties uz šo ceļu, man ļoti patika fakultāte un studiju atmosfēra. Kā arī dodoties ceļā uz Latvijas Universitāti, man vienmēr pa ceļam bija interesanti lūkoties apkārt un vērot Rīgu.
+          </p>
+        </div>
+        <div class="w-full md:w-1/3 flex justify-center md:justify-end items-end md:items-center">
+          <img loading="eager" src="photos/light/sem1.jpg" data-light="photos/light/sem1.jpg" data-dark="photos/dark/sem1.jpg" alt="1. semestra bilde" class="section-img rounded-lg shadow-md w-full md:w-full object-cover mt-4 md:mt-0 mb-8 md:mb-0 max-h-60 md:max-h-none dark:text-white transition-colors duration-500">
+        </div>
+      </div>
+    </section>
+    
+    <section id="section2" class="min-h-screen flex flex-col items-center justify-center px-4 bg-gray-50 dark:bg-bg_darker opacity-0 transition-all duration-500">
+      <h2 class="text-2xl md:text-4xl font-semibold mt-8 mb-4 text-center text-LU_BLUE dark:text-GOLD transition-colors duration-500">2. semestris</h2>
+      <div class="w-full max-w-2xl flex flex-col items-center">
+        <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+          Otrais semestris bija tikpat interesants kā pirmais, bet jau ar vairāk izaicinājumiem. Kā arī biju izdzīvojis savu pirmo sesiju. Šajā semestrī es sāku vairāk iepazīt universitātes vidi.
+        </p>
+        <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+          Taču ceļs nemainījās - joprojām bija jāiet uz Raiņa bulvāri un Jelgavas ielu. Tuvojoties pavasarim, ceļš uz universitāti kļuva arvien patīkamāks. Pa ceļam uz Jelgavas ielu, es vēroju plašo Daugavu.
+        </p>
+        <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+          Savukārt pa ceļam uz Raiņa bulvāri, es varēju izbaudīt skaisto Vecrīgu un tās arhitektūru, sildošajā pavasara Saulē. Šajā semestrī es arī iepazinos ar dažādiem fakultātes pasākumiem un aktivitātēm, kas papildināja manu Latvijas Universitātes ceļu.
         </p>
       </div>
+      <img loading="eager" src="photos/light/sem2.jpg" data-light="photos/light/sem2.jpg" data-dark="photos/dark/sem2.jpg" alt="2. semestra bilde" class="section-img rounded-lg shadow-md w-full max-w-2xl h-48 md:h-80 object-cover mt-4 mb-8 max-h-60 md:max-h-none dark:text-white transition-colors duration-500">
     </section>
     
-    <section id="section2" class="min-h-screen flex flex-row-reverse items-center px-4 bg-gray-50 dark:bg-bg_darker transition-colors duration-300 opacity-0 -translate-x-full transition-all duration-700">
-      <img src="photos/hall.jpg" alt="2. semestra bilde" class="rounded-lg shadow-md w-1/2 dark:text-white transition-colors duration-300">
-      <div class="text-right w-1/2 px-6">
-      <h2 class="text-4xl text-left font-semibold mb-4 text-LU_BLUE dark:text-GOLD transition-colors duration-300">
-        2. semestris
-      </h2>
-      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">
-        Otrais semestris bija tikpat interesants kā pirmais, bet jau ar vairāk izaicinājumiem. Kā arī biju izdzīvojis savu pirmo sesiju.
-        Šajā semestrī es sāku vairāk iepazīt universitātes vidi. Taču ceļs nemainījās - joprojām bija jāiet uz Raiņa bulvāri un Jelgavas ielu.
-        Tuvojoties pavasarim, ceļš uz universitāti kļuva arvien patīkamāks. Pa ceļam uz Jelgavas ielu, es vēroju plašo Daugavu.
-        Savukārt pa ceļam uz Raiņa bulvāri, es varēju izbaudīt skaisto Vecrīgu un tās arhitektūru, sildošajā pavasara Saulē.
-        Šajā semestrī es arī iepazinos ar dažādiem fakultātes pasākumiem un aktivitātēm, kas papildināja manu Latvijas Universitātes ceļu.
-      </p>
+    <section id="section3" class="min-h-screen flex flex-col items-center justify-center px-4 bg-gray-50 dark:bg-bg_darker opacity-0 transition-all duration-500">
+      <div class="flex flex-col md:flex-row items-center md:items-center justify-center w-full max-w-5xl h-full md:space-x-8">
+        <div class="flex flex-col w-full md:w-2/3 h-full justify-center">
+          <h2 class="text-2xl md:text-4xl font-semibold mt-3 mb-4 text-center md:text-right text-LU_BLUE dark:text-GOLD transition-colors duration-500">3. semestris</h2>
+          <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+            Trešais semestris jau bija interesantāks. Dažas lekcijas notika attālināti, dēļ kā ceļš uz universitāti nu jau kļuva digitālāks. Nācās pierast pie Microsoft Teams un Zoom platformām.
+          </p>
+          <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+            Kā arī ja iepriekš likās, ka biežāk devos uz Jelgavas ielu, tad šajā semestrī biežāk devos uz Raiņa bulvāri, jo tur arvien biežāk tika organizētas lekcijas un laboratorijas darbi.
+          </p>
+          <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+            Šajā semestrī vēl arī nācās izvēlēties savu tālāko studiju ceļu, no kā būtu atkarīga mana specializācija. Es pamatā biju izvēlējies programmatūras inženierijas novirzienu, taču drošības pēc izvēlējos arī kursus, saistībā ar datortīkliem.
+          </p>
+        </div>
+        <div class="w-full md:w-1/3 flex justify-center md:justify-end items-end md:items-center">
+            <img loading="eager" src="photos/light/sem3.jpg" data-light="photos/light/sem3.jpg" data-dark="photos/dark/sem3.jpg" alt="3. semestra bilde" class="section-img rounded-lg shadow-md w-full md:w-full object-cover mt-4 md:mt-0 mb-8 md:mb-0 max-h-60 md:max-h-none dark:text-white transition-colors duration-500">
+        </div>
       </div>
     </section>
     
-    <section id="section3" class="min-h-screen flex flex-row items-center px-4 bg-gray-50 dark:bg-bg_darker transition-colors duration-300 opacity-0 -translate-x-full transition-all duration-700">
-      <img src="photos/lapenis.jpg" alt="3. semestra bilde" class="rounded-lg shadow-md w-1/3 dark:text-white transition-colors duration-300">
-      <div class="text-left w-1/2 px-6">
-      <h2 class="text-4xl font-semibold mb-4 text-LU_BLUE dark:text-GOLD transition-colors duration-300">
-        3. semestris
-      </h2>
-      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">
-        Trešais semestris jau bija interesantāks. Dažas lekcijas notika attālināti, dēļ kā ceļš uz universitāti nu jau kļuva digitālāks.
-        Nācās pierast pie Microsoft Teams un Zoom platformām. Kā arī ja iepriekš likās, ka biežāk devos uz Jelgavas ielu,
-        tad šajā semestrī biežāk devos uz Raiņa bulvāri, jo tur arvien biežāk tika organizētas lekcijas un laboratorijas darbi.
-        Šajā semestrī vēl arī nācās izvēlēties savu tālāko studiju ceļu, no kā būtu atkarīga mana specializācija.
-        Es pamatā biju izvēlējies programmatūras inženierijas novirzienu, taču drošības pēc izvēlējos arī kursus, saistībā ar datortīkliem.
-      </p>
+    <section id="section4" class="min-h-screen flex flex-col items-center justify-center px-4 bg-gray-50 dark:bg-bg_darker opacity-0 transition-all duration-500">
+      <h2 class="text-2xl md:text-4xl font-semibold mt-8 mb-4 text-center text-LU_BLUE dark:text-GOLD transition-colors duration-500">4. semestris</h2>
+      <div class="w-full max-w-2xl flex flex-col items-center">
+        <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+          Ceturtais semestris bija viens no grūtākajiem semestriem. Šajā semestrī bija daudz vairāk lekciju un laboratorijas darbu, kā arī vairāk jāmācās. Taču šis semestris bija arī ļoti interesants, jo es ieguvu daudz jaunas zināšanas un prasmes.
+        </p>
+        <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+          Ceļš uz universitāti arvien vairāk pārtapa par Raiņa bulvāra apmeklējumu, jo studējošo skaits samazinājās un mēs varējām ietilpt 415. auditorijā. Pamazām sāku just, ka drīz jau lekcijas notiks tikai Raiņa bulvārī, dēļ kā ceļš uz universitāti kļūtu vienkāršāks.
+        </p>
+      </div>
+      <img loading="eager" src="photos/light/sem4.jpg" data-light="photos/light/sem4.jpg" data-dark="photos/dark/sem4.jpg" alt="4. semestra bilde" class="section-img rounded-lg shadow-md w-full max-w-2xl h-48 md:h-80 object-cover mt-4 mb-8 max-h-60 md:max-h-none dark:text-white transition-colors duration-500">
+    </section>
+    
+    <section id="section5" class="min-h-screen flex flex-col items-center justify-center px-4 bg-gray-50 dark:bg-bg_darker opacity-0 transition-all duration-500">
+      <h2 class="text-2xl md:text-4xl font-semibold mt-8 mb-4 text-center text-LU_BLUE dark:text-GOLD transition-colors duration-500">5. semestris</h2>
+      <div class="w-full max-w-2xl flex flex-col items-center">
+        <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+          Piektais semestris bija ļoti, ļoti īpašs, jo bija jāraksta kvalifikācijas darbs. Tas bija liels izaicinājums, bet arī ļoti interesants process. Es izvēlējos tēmu par kases aparātu.
+        </p>
+        <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+          Un tā kā lekciju vispār nebija, tad šajā semestrī es devos ceļā uz universitāti tikai vienu reizi - lai aizstāvētu kvalifikācijas darbu. Sākumā vēl bija dažas lekcijas tiešsaistē, kur jau atkal, bija jādodas caur digitālo universitātes ceļu.
+        </p>
+      </div>
+      <img loading="eager" src="photos/light/sem5.jpg" data-light="photos/light/sem5.jpg" data-dark="photos/dark/sem5.jpg" alt="5. semestra bilde" class="section-img rounded-lg shadow-md w-full max-w-2xl h-48 md:h-80 object-cover mt-4 mb-8 max-h-60 md:max-h-none dark:text-white transition-colors duration-500">
+    </section>
+    
+    <section id="section6" class="min-h-screen flex flex-col items-center justify-center px-4 bg-gray-50 dark:bg-bg_darker opacity-0 transition-all duration-500">
+      <div class="flex flex-col md:flex-row items-center md:items-center justify-center w-full max-w-5xl h-full md:space-x-8">
+        <div class="flex flex-col w-full md:w-2/3 h-full justify-center">
+          <h2 class="text-2xl md:text-4xl font-semibold mt-4 mb-4 text-center md:text-right text-LU_BLUE dark:text-GOLD transition-colors duration-500">6. semestris</h2>
+          <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+            Sestais semestris šobrīd ir aktīvs. Biju nokārtojis kvalifikācijas darbu. Šajā semestrī devāmies ceļā uz Latvijas Universitātes Lielo aulu, kurā saņēmu 1. līmeņa programmatūras inženierijas kvalifikāciju. Taču šobrīd klātienes lekcijas notiek nu jau tikai Raiņa bulvārī, jo mēs visi ietilpstam 415. auditorijā.
+          </p>
+          <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+            Kā arī ir dažas tiešsaistes lekcijas un ļoti interesanti ir tas, ka šajā semestrī varu iet divus ceļus. T.i. lekcijas notiek gan klātienē, gan arī vienlaicīgi tiešsaistē. Mēs kā studenti varam izvēlēties kuru ceļu izmantot.
+          </p>
+        </div>
+        <div class="w-full md:w-1/3 flex justify-center md:justify-end items-end md:items-center">
+          <img loading="eager" src="photos/light/sem6.jpg" data-light="photos/light/sem6.jpg" data-dark="photos/dark/sem6.jpg" alt="6. semestra bilde" class="section-img rounded-lg shadow-md w-full md:w-full object-cover mt-4 md:mt-0 mb-8 md:mb-0 max-h-60 md:max-h-none dark:text-white transition-colors duration-500">
+        </div>
       </div>
     </section>
     
-    <section id="section4" class="min-h-screen flex flex-row-reverse items-center px-4 bg-gray-50 dark:bg-bg_darker transition-colors duration-300 opacity-0 -translate-x-full transition-all duration-700">
-      <img src="photos/flowers.jpg" alt="4. semestra bilde" class="rounded-lg shadow-md w-1/2 dark:text-white transition-colors duration-300">
-      <div class="text-right w-1/2 px-6">
-      <h2 class="text-4xl text-left font-semibold mb-4 text-LU_BLUE dark:text-GOLD transition-colors duration-300">
-        4. semestris
-      </h2>
-      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">
-        Ceturtais semestris bija viens no grūtākajiem semestriem. Šajā semestrī bija daudz vairāk lekciju un laboratorijas darbu, kā arī vairāk jāmācās.
-        Taču šis semestris bija arī ļoti interesants, jo es ieguvu daudz jaunas zināšanas un prasmes.
-        Ceļš uz universitāti arvien vairāk pārtapa par Raiņa bulvāra apmeklējumu, jo studējošo skaits samazinājās un mēs varējām ietilpt 415. auditorijā.
-        Pamazām sāku just, ka drīz jau lekcijas notiks tikai Raiņa bulvārī, dēļ kā ceļš uz universitāti kļūtu vienkāršāks.
-      </p>
+    <section id="section7" class="min-h-screen flex flex-col items-center justify-center px-4 bg-gray-50 dark:bg-bg_darker opacity-0 transition-all duration-500">
+      <h2 class="text-2xl md:text-4xl font-semibold mt-8 mb-4 text-center text-LU_BLUE dark:text-GOLD transition-colors duration-500">7. semestris</h2>
+      <div class="w-full max-w-2xl flex flex-col items-center">
+        <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+          Šis semestris vēl ir priekšā, bet es jau zinu, ka tas būs interesants un izaicinošs, jo būs jāraksta bakalaura darbs. Cerams, ka ceļš uz universitāti tiks papildināts.
+        </p>
       </div>
+      <img loading="eager" src="photos/light/sem7.jpg" data-light="photos/light/sem7.jpg" data-dark="photos/dark/sem7.jpg" alt="7. semestra bilde" class="section-img rounded-lg shadow-md w-full max-w-2xl h-48 md:h-80 object-cover mt-4 mb-8 max-h-60 md:max-h-none dark:text-white transition-colors duration-500">
     </section>
     
-    <section id="section5" class="min-h-screen flex flex-row items-center px-4 bg-gray-50 dark:bg-bg_darker transition-colors duration-300 opacity-0 -translate-x-full transition-all duration-700">
-      <img src="photos/glass.jpg" alt="5. semestra bilde" class="rounded-lg shadow-md w-1/2 dark:text-white transition-colors duration-300">
-      <div class="text-left w-1/2 px-6">
-      <h2 class="text-4xl font-semibold mb-4 text-LU_BLUE dark:text-GOLD transition-colors duration-300">
-        5. semestris
-      </h2>
-      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">
-        Piektais semestris bija ļoti, ļoti īpašs, jo bija jāraksta kvalifikācijas darbs.
-        Tas bija liels izaicinājums, bet arī ļoti interesants process. Es izvēlējos tēmu par kases aparātu.
-        Un tā kā lekciju vispār nebija, tad šajā semestrī es devos ceļā uz universitāti tikai vienu reizi - lai aizstāvētu kvalifikācijas darbu.
-        Sākumā vēl bija dažas lekcijas tiešsaistē, kur jau atkal, bija jādodas caur digitālo universitātes ceļu.
-      </p>
+    <section id="section8" class="min-h-screen flex flex-col items-center justify-center px-4 bg-gray-50 dark:bg-bg_darker opacity-0 transition-all duration-500">
+      <h2 class="text-2xl md:text-4xl font-semibold mt-8 mb-4 text-center text-LU_BLUE dark:text-GOLD transition-colors duration-500">8. semestris</h2>
+      <div class="w-full max-w-2xl flex flex-col items-center">
+        <p class="mb-4 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-500 text-sm md:text-base">
+          Pēdējais semestris. Šis semestris būs īpašs, jo tas būs noslēgums manam studiju ceļam Latvijas Universitātē. Šajā semestrī pēdējo reizi došos pa Latvijas Universitātes ceļu, lai iegūtu savu diplomu un atvadītos no universitātes.
+        </p>
       </div>
-    </section>
-    
-    <section id="section6" class="min-h-screen flex flex-row-reverse items-center px-4 bg-gray-50 dark:bg-bg_darker transition-colors duration-300 opacity-0 -translate-x-full transition-all duration-700">
-      <img src="photos/me.jpg" alt="6. semestra bilde" class="rounded-lg shadow-md w-1/3 dark:text-white transition-colors duration-300">
-      <div class="text-right w-1/2 px-6">
-      <h2 class="text-4xl text-left font-semibold mb-4 text-LU_BLUE dark:text-GOLD transition-colors duration-300">
-        6. semestris
-      </h2>
-      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">
-        Sestais semestris šobrīd ir aktīvs. Biju nokārtojis kvalifikācijas darbu. Šajā semestrī devāmies ceļā uz Latvijas Universitātes Lielo aulu, kurā saņēmu 1. līmeņa programmatūras inženierijas kvalifikāciju.
-        Taču šobrīd klātienes lekcijas notiek nu jau tikai Raiņa bulvārī, jo mēs visi ietilpstam 415. auditorijā.
-        Kā arī ir dažas tiešsaistes lekcijas un ļoti interesanti ir tas, ka šajā semestrī varu iet divus ceļus.
-        T.i. lekcijas notiek gan klātienē, gan arī vienlaicīgi tiešsaistē. Mēs kā studenti varam izvēlēties kuru ceļu izmantot.
-      </p>
-      </div>
-    </section>
-    
-    <section id="section7" class="min-h-screen flex flex-row items-center px-4 bg-gray-50 dark:bg-bg_darker transition-colors duration-300 opacity-0 -translate-x-full transition-all duration-700">
-      <img src="photos/tv.jpg" alt="7. semestra bilde" class="rounded-lg shadow-md w-1/2 dark:text-white transition-colors duration-300">
-      <div class="text-left w-1/2 px-6">
-      <h2 class="text-4xl font-semibold mb-4 text-LU_BLUE dark:text-GOLD transition-colors duration-300">
-        7. semestris
-      </h2>
-      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">
-        Šis semestris vēl ir priekšā, bet es jau zinu, ka tas būs interesants un izaicinošs, jo būs jāraksta bakalaura darbs.
-        Cerams, ka ceļš uz universitāti tiks papildināts.
-      </p>
-      </div>
-    </section>
-    
-    <section id="section8" class="min-h-screen flex flex-row-reverse items-center px-4 bg-gray-50 dark:bg-bg_darker transition-colors duration-300 opacity-0 -translate-x-full transition-all duration-700">
-      <img src="photos/graduates.jpg" alt="8. semestra bilde" class="rounded-lg shadow-md w-1/2 dark:text-white transition-colors duration-300">
-      <div class="text-right w-1/2 px-6">
-      <h2 class="text-4xl text-left font-semibold mb-4 text-LU_BLUE dark:text-GOLD transition-colors duration-300">
-        8. semestris
-      </h2>
-      <p class="max-w-2xl mb-6 text-justify text-gray-700 dark:text-gray-300 transition-colors duration-300">
-        Pēdējais semestris. Šis semestris būs īpašs, jo tas būs noslēgums manam studiju ceļam Latvijas Universitātē.
-        Šajā semestrī pēdējo reizi došos pa Latvijas Universitātes ceļu, lai iegūtu savu diplomu un atvadītos no universitātes.
-      </p>
-      </div>
+      <img loading="eager" src="photos/light/sem8.jpg" data-light="photos/light/sem8.jpg" data-dark="photos/dark/sem8.jpg" alt="8. semestra bilde" class="section-img rounded-lg shadow-md w-full max-w-2xl h-48 md:h-80 object-cover mt-4 mb-8 max-h-60 md:max-h-none dark:text-white transition-colors duration-500">
     </section>
   </main>
 

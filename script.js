@@ -1,11 +1,54 @@
+// --- Swap section images for dark mode ---
+function updateSectionImagesForDarkMode() {
+  const isDark = document.body.classList.contains('dark');
+  document.querySelectorAll('.section-img, #title img[alt="Title image"]').forEach(img => {
+    const lightSrc = img.getAttribute('data-light');
+    const darkSrc = img.getAttribute('data-dark');
+    if (isDark && darkSrc) {
+      if (img.src !== location.origin + '/' + darkSrc && !img.src.endsWith(darkSrc)) {
+        img.src = darkSrc;
+      }
+    } else if (lightSrc) {
+      if (img.src !== location.origin + '/' + lightSrc && !img.src.endsWith(lightSrc)) {
+        img.src = lightSrc;
+      }
+    }
+  });
+}
+
+// Listen for dark mode changes on body, not documentElement
+const darkModeObserver = new MutationObserver(updateSectionImagesForDarkMode);
+darkModeObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+// Initial run
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', updateSectionImagesForDarkMode);
+} else {
+  updateSectionImagesForDarkMode();
+}
 document.addEventListener('DOMContentLoaded', () => {
+  const imageList = [
+    'photos/LU1.jpg',
+    'photos/LU2.jpg',
+    'photos/hall.jpg',
+    'photos/lapenis.jpg',
+    'photos/flowers.jpg',
+    'photos/glass.jpg',
+    'photos/me.jpg',
+    'photos/tv.jpg',
+    'photos/graduates.jpg'
+  ];
+  imageList.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+  
   // Intersection Observer for section animation using Tailwind classes only
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.remove('opacity-0', '-translate-x-full');
+        entry.target.classList.remove('opacity-0');
         void entry.target.offsetWidth;
-        entry.target.classList.add('opacity-100', 'translate-x-0');
+        entry.target.classList.add('opacity-100');
         observer.unobserve(entry.target); // Animate only once
       }
     });
@@ -16,13 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Target all main content sections
   const sections = document.querySelectorAll('main > section');
-  console.log('Found sections:', sections.length);
   sections.forEach(el => {
-    el.style.transitionDelay = '';
     observer.observe(el);
   });
 
-  const darkModeToggle = document.getElementById('darkModeToggle');
+  // Support both desktop and mobile dark mode toggles
+  const darkModeToggles = [
+    document.getElementById('darkModeToggleDesktop'),
+    document.getElementById('darkModeToggleMobile')
+  ];
   const body = document.body;
 
   // Check for saved theme in localStorage
@@ -35,19 +80,27 @@ document.addEventListener('DOMContentLoaded', () => {
     body.classList.toggle('dark', prefersDark);
   }
 
-  // Update the button icon based on the current theme
-  const updateButtonIcon = () => {
-    const img = darkModeToggle.querySelector('img');
+  // Update the button icons based on the current theme
+  const updateButtonIcons = () => {
     const isDarkMode = body.classList.contains('dark');
-    img.src = isDarkMode ? 'photos/to_light.png' : 'photos/to_dark.png';
+    darkModeToggles.forEach(btn => {
+      if (btn) {
+        const img = btn.querySelector('img');
+        if (img) img.src = isDarkMode ? 'photos/to_light.png' : 'photos/to_dark.png';
+      }
+    });
   };
-  updateButtonIcon();
-  
-  // Add event listener to toggle dark mode
-  darkModeToggle.addEventListener('click', () => {
-    const isDarkMode = body.classList.toggle('dark');
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-    updateButtonIcon();
+  updateButtonIcons();
+
+  // Add event listener to toggle dark mode for both buttons
+  darkModeToggles.forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const isDarkMode = body.classList.toggle('dark');
+        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        updateButtonIcons();
+      });
+    }
   });
 
   // TODO: fix this for mobile view.
@@ -56,6 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenu = document.getElementById('mobileMenu');
 
   menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+    const isOpen = mobileMenu.classList.contains('opacity-100');
+    if (isOpen) {
+      mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+      mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+    } else {
+      mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+      mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+    }
   });
 });
